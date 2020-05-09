@@ -1,5 +1,8 @@
 # SBT en ejemplos
 
+![SBT en ejemplos](https://blog.jetbrains.com/scala/files/2012/03/header1.png "SBT en ejemplos")
+
+
 **SBT** es una herramienta para construcción y mantenimiento de proyectos Scala.
 
 
