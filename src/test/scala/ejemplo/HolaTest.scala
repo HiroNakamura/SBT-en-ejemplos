@@ -1,0 +1,5 @@
+package ejemplo
+
+object HolaTest {
+    
+}
