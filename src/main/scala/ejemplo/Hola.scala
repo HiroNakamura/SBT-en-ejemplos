@@ -136,7 +136,11 @@ object Hola {
         println("Nombre: "+ObjetoX.nombre)
         ObjetoY.metodo()
 
+        //Esto no se puede:
+        //MyTrait.a = 22
+        //println("Valor de a: "+MyTrait.a)
 
+        
 
     }
 
