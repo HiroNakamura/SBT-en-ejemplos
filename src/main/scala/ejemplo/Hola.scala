@@ -2,6 +2,9 @@ package ejemplo
 
 
 import javax.swing.JOptionPane
+import java.io.FileReader
+import java.io.FileNotFoundException
+import java.io.IOException
 
 
 object Hola {
@@ -84,6 +87,9 @@ object Hola {
     def testD():Unit={
         val x: X = new X("Aldebaran de Casio")
         println(x.nombre)
+        if(isX(x) == true){
+            println("Es de tipo X")
+        }
         val y: Y = new Y("Fuller de Gilbrantad")
         println(y.nombre)
         val a = new A()
@@ -96,14 +102,67 @@ object Hola {
                 println("Ha ocurrido una excepcion") 
             }
         }
+
+        val z:Z = new Z("Juan Polinar Sanchez",true)
+        z.metodo()
+        //Esto no puede ser: atributos nombre y activo son private, no se puede acceder a ellos
+        //if(z.activo){
+            //printf("%s\n",z.nombre)
+        //}
+
+        if(z.isActivo()){
+            println("Nombre: "+z.getNombre())
+        }
+        println("***************************************")
+        val q = new Q("Ana")
+        printf("Nombre: %s\n",q.nombre)
+        q.setNombre("Maria")
+        println("Nombre: "+q.getNombre())
+        println("****************************************")
+        val hijaNoAbs:HijaNoAbs = new HijaNoAbs()
+        println("a: "+hijaNoAbs.a)
+        
+        
+        //Esto no se puede: MyTrait es abstracta:
+        //val myTrait = new MyTrait()
+        //println("a: "+myTrait.a)
+
+        val hijatrait:HijaTrait = new HijaTrait(2)
+        println("a: "+hijatrait.a)
+        println("****************************************")
+        
+        ObjetoX.nombre ="Thomas Wayne"
+        ObjetoY.edad = 32
+        println("Nombre: "+ObjetoX.nombre)
+        ObjetoY.metodo()
+
+
+
     }
 
     def testC(): Unit ={
         JOptionPane.showMessageDialog(null,"Estas usando javax en Scala","Scala",JOptionPane.INFORMATION_MESSAGE)
+        try {
+            val f = new FileReader("archivo.dat")
+        }catch {
+            case ex: FileNotFoundException => {
+                println("El archivo no existe")
+            }
+            case ex: IOException => {
+                println("Una excepcion al leer el archivo")
+            }
+        }finally {
+            println("Hecho")
+        }
     }
 
     def testB(): String = {
         "*** Programando en Scala como si fuera en primero ***"
+    }
+
+    def isX(x: Any): Boolean = x match {
+        case o: X => true
+        case _ => false
     }
 
     def testA():Unit={
@@ -173,4 +232,66 @@ class B extends A{
         println("Metodo en B")
     }
 }
+
+class Z(private val nombre:CharSequence, private val activo:Boolean){
+    def saludar():String={
+        "Hola, estoy en la clase Z"
+    }
+    def metodo():Unit={
+        println(saludar())
+        if(activo == true){
+            printf("Nombre: %s\n",nombre)
+        }
+    }
+
+    def getNombre():CharSequence={
+        nombre
+    }
+
+    def isActivo():Boolean={
+        activo
+    }
+}
+
+class Q(var nombre:String){
+    def setNombre(nombre:String):Unit={
+        this.nombre = nombre
+    }
+    def getNombre():String = {
+        nombre
+    }
+
+    def metodo():Unit={
+        println("Estoy en la clase Q")
+    }
+}
+
+abstract class Abstracta{
+    val a:Int = 0
+}
+
+class HijaNoAbs extends Abstracta{
+    override val a:Int=1
+}
+
+trait MyTrait {
+  var a: Int
+}
+
+class HijaTrait(var a: Int) extends MyTrait
+
+object ObjetoX{
+    var nombre:String = ""
+}
+
+object ObjetoY{
+    var edad:Int = 0
+
+    def metodo():Unit={
+        printf("Edad: %d\n",edad)
+    }
+}
+
+
+
 
