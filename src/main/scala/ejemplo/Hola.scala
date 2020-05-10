@@ -45,7 +45,21 @@ object Hola {
             println("Contador: "+contador)
             contador = contador + 1
         }
-    
+
+        numeros.foreach{ println }
+        var suma:Int = 0
+        numeros.foreach{ suma+=_}
+        printf("Suma: %d\n",suma)
+
+        val vector = Vector("A","N","A"," ","M","A","R","I","A")
+        var concatenar:String =""
+        vector.foreach{ concatenar+=_ }
+        printf("%s\n",concatenar)
+        for (v <- vector if v.startsWith("A")){
+            println(v)
+        }
+        
+
     }
 
     def testD():Unit={
