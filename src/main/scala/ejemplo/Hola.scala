@@ -58,8 +58,27 @@ object Hola {
         for (v <- vector if v.startsWith("A")){
             println(v)
         }
-        
-
+        println("*****************************")
+        val numeral = (1 to 100000).toList
+        println("Suma: "+numeral.reduce{_+_})
+        val str:String = "FERROCARRILERO".toLowerCase()
+        printf("%s\n",str)
+        str.foreach{println}
+        println("*****************************")
+        for(i <- 1 to 3) println(i)
+        for(i <- 3 to 1) println(i)
+        for(i <- 5 to 1 by -1) println(i)
+        for(i <- 5 to 1 by -2) println(i)
+        for(i <- 1 to 5 by 2) println(i)
+        for(i <- 5 to 1 by 1) println(i)
+        println("*****************************")
+        val arrayInt = Array(1,2,3,4)
+        val arrayStr = Array("1","2","3","4")
+        arrayInt.foreach{println}
+        arrayStr.foreach{println}
+        println("*****************************")
+        val tupla = (123,"Juan Perez",true,'\u0021')
+        println("Tupla: "+tupla)
     }
 
     def testD():Unit={
@@ -67,6 +86,16 @@ object Hola {
         println(x.nombre)
         val y: Y = new Y("Fuller de Gilbrantad")
         println(y.nombre)
+        val a = new A()
+        val b:B = new B()
+        try{
+            a.metodo()
+            b.metodo()
+        }catch{
+            case ex: Exception => { 
+                println("Ha ocurrido una excepcion") 
+            }
+        }
     }
 
     def testC(): Unit ={
@@ -132,4 +161,16 @@ object Hola {
 class X(val nombre:String)
 
 class Y(override val nombre:String) extends X(nombre)
+
+class A{
+    def metodo():Unit={
+        println("Metodo en A")
+    }
+}
+
+class B extends A{
+    override def metodo():Unit={
+        println("Metodo en B")
+    }
+}
 
