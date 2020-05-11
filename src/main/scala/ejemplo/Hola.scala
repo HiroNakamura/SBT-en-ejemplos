@@ -142,8 +142,14 @@ object Hola {
         println("****************************************")
         val c1 = new MyCaseClass(122200L,"Torre 123","Dominique")
         val c2 = new MyCaseClass(199900L,"Aldama 101","Benedictus")
+        val c3:MyCaseClass = new MyCaseClass(12222L,"Aldonjares 232","Romulo San Pedro")
+        val listaCaseClass = Array(c1,c2,c3)
         println(c1)
         println(c2)
+        println(c3)
+        println("****************************************")
+        listaCaseClass.foreach{println}
+
     }
 
     def testC(): Unit ={
@@ -299,6 +305,7 @@ object ObjetoY{
 }
 
 case class MyCaseClass(clave:Long,direccion:String,nombre:CharSequence)
+
 
 
 
