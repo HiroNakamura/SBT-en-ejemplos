@@ -139,9 +139,11 @@ object Hola {
         //Esto no se puede:
         //MyTrait.a = 22
         //println("Valor de a: "+MyTrait.a)
-
-        
-
+        println("****************************************")
+        val c1 = new MyCaseClass(122200L,"Torre 123","Dominique")
+        val c2 = new MyCaseClass(199900L,"Aldama 101","Benedictus")
+        println(c1)
+        println(c2)
     }
 
     def testC(): Unit ={
@@ -295,6 +297,9 @@ object ObjetoY{
         printf("Edad: %d\n",edad)
     }
 }
+
+case class MyCaseClass(clave:Long,direccion:String,nombre:CharSequence)
+
 
 
 
