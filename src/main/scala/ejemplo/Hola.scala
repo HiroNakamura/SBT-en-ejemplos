@@ -226,6 +226,11 @@ object Hola {
         }
         println(resultado)
 
+        val x = if (4 == 4) 1 else 0
+        val y = if (5<4) "Hola" else "Adios"
+        println("x: "+x)
+        println("y: "+y)
+
     }
 }
 
