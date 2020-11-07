@@ -14,6 +14,20 @@ object Hola {
        testC()
        testD()
        testE()
+       testF()
+    }
+
+    def testF(): Unit = {
+        var nombre:String = "Fernando Carraro Aguirre"
+        var suma:Int = 0
+        val palabras = nombre.split(" ")
+        println(nombre)
+        println("Cant. de palabras: "+palabras.size)
+        for (e <- palabras) {
+            println(e+" : "+e.length())
+            suma += e.length()
+        }
+        println("Cant. de letras: "+suma)
     }
 
     def testE():Unit={
