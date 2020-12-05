@@ -14,6 +14,12 @@ object Hola {
        testC()
        testD()
        testE()
+       testF()
+    }
+
+    def testF():Unit={
+        def servicio = new ServicioImpl()
+        servicio.abrir()
     }
 
     def testE():Unit={
@@ -306,8 +312,13 @@ object ObjetoY{
 
 case class MyCaseClass(clave:Long,direccion:String,nombre:CharSequence)
 
+//En Scala las interfaces son trait
+trait IServicio{
+    def abrir(): Unit
+}
 
-
-
+class ServicioImpl extends IServicio{
+    def abrir:Unit = println("Abriendo la puerta del auto!!")
+}
 
 
