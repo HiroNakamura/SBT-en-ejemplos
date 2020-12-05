@@ -17,9 +17,23 @@ object Hola {
        testF()
     }
 
+<<<<<<< HEAD
     def testF():Unit={
         def servicio = new ServicioImpl()
         servicio.abrir()
+=======
+    def testF(): Unit = {
+        var nombre:String = "Fernando Carraro Aguirre"
+        var suma:Int = 0
+        val palabras = nombre.split(" ")
+        println(nombre)
+        println("Cant. de palabras: "+palabras.size)
+        for (e <- palabras) {
+            println(e+" : "+e.length())
+            suma += e.length()
+        }
+        println("Cant. de letras: "+suma)
+>>>>>>> 8f2256bc81ebb27d38da8c713115151f812d6799
     }
 
     def testE():Unit={
@@ -231,6 +245,11 @@ object Hola {
             case 5 => resultado = "Hei"
         }
         println(resultado)
+
+        val x = if (4 == 4) 1 else 0
+        val y = if (5<4) "Hola" else "Adios"
+        println("x: "+x)
+        println("y: "+y)
 
     }
 }
