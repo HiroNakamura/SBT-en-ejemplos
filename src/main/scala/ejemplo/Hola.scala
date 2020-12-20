@@ -5,8 +5,15 @@ import javax.swing.JOptionPane
 import java.io.FileReader
 import java.io.FileNotFoundException
 import java.io.IOException
+import com.typesafe.scalalogging._
+import org.slf4j.LoggerFactory
 
+object Hola extends App {   
+  val logger = LoggerFactory.getLogger(getClass.getSimpleName)
+  logger.info("*** SCALA ***")
+}
 
+/*
 object Hola {
     def main(args: Array[String]): Unit = {
        println(testB()) 
@@ -17,11 +24,6 @@ object Hola {
        testF()
     }
 
-<<<<<<< HEAD
-    def testF():Unit={
-        def servicio = new ServicioImpl()
-        servicio.abrir()
-=======
     def testF(): Unit = {
         var nombre:String = "Fernando Carraro Aguirre"
         var suma:Int = 0
@@ -33,7 +35,9 @@ object Hola {
             suma += e.length()
         }
         println("Cant. de letras: "+suma)
->>>>>>> 8f2256bc81ebb27d38da8c713115151f812d6799
+        println("====================================")
+        def servicio = new ServicioImpl()
+        servicio.abrir()
     }
 
     def testE():Unit={
@@ -252,7 +256,7 @@ object Hola {
         println("y: "+y)
 
     }
-}
+}*/
 
 class X(val nombre:String)
 
