@@ -9,9 +9,18 @@ import com.typesafe.scalalogging._
 import org.slf4j.LoggerFactory
 
 object Hola extends App {   
-  val logger = LoggerFactory.getLogger(getClass.getSimpleName)
-  logger.info("*** SCALA ***")
+  mockTestA()
+
+
+
+  def mockTestA():Unit={
+    val logger = LoggerFactory.getLogger(getClass.getSimpleName)
+    logger.info("*** SCALA ***")
+  }
+
 }
+
+
 
 /*
 object Hola {
