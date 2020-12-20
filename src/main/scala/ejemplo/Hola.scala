@@ -7,6 +7,8 @@ import java.io.FileNotFoundException
 import java.io.IOException
 import com.typesafe.scalalogging._
 import org.slf4j.LoggerFactory
+import ejemplo.model.Actor
+
 
 object Hola extends App {   
   mockTestA()
@@ -16,6 +18,7 @@ object Hola extends App {
   def mockTestA():Unit={
     val logger = LoggerFactory.getLogger(getClass.getSimpleName)
     logger.info("*** SCALA ***")
+    val actor:Actor = new Actor("Joaquin Mortiz")
   }
 
 }
