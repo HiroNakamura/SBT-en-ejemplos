@@ -1,5 +1,0 @@
-package ejemplo
-
-object HolaTest {
-    
-}
