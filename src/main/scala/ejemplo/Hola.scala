@@ -19,6 +19,7 @@ object Hola extends App {
     val logger = LoggerFactory.getLogger(getClass.getSimpleName)
     logger.info("*** SCALA ***")
     val actor:Actor = new Actor("Joaquin Mortiz")
+    logger.info("Nombre del actor: {}",actor.nombre)
   }
 
 }
